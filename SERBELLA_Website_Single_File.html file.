@@ -1,1 +1,441 @@
     index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SERBELLA® — Love, Made Beautiful</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#faf9f7;
+  color:#171717;
+}
+button{font:inherit;cursor:pointer}
+header{
+  position:sticky;
+  top:0;
+  z-index:20;
+  background:rgba(250,249,247,.96);
+  border-bottom:1px solid #ddd;
+  backdrop-filter:blur(10px);
+}
+.nav{
+  max-width:1200px;
+  margin:auto;
+  height:72px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 22px;
+}
+.logo{
+  font-size:25px;
+  font-weight:800;
+  letter-spacing:5px;
+}
+.navlinks{
+  display:flex;
+  gap:25px;
+}
+.navlinks a{
+  color:#171717;
+  text-decoration:none;
+  font-size:14px;
+}
+.cart-btn{
+  border:0;
+  background:#171717;
+  color:white;
+  padding:11px 16px;
+  border-radius:30px;
+}
+.hero{
+  min-height:600px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:80px 20px;
+  background:linear-gradient(135deg,#eee8df,#fff);
+}
+.hero-inner{max-width:800px}
+.eyebrow{
+  font-size:12px;
+  letter-spacing:4px;
+  margin-bottom:22px;
+}
+.hero h1{
+  font-size:clamp(55px,10vw,110px);
+  letter-spacing:8px;
+  line-height:.95;
+  margin-bottom:25px;
+}
+.hero p{
+  font-size:18px;
+  line-height:1.6;
+  max-width:620px;
+  margin:0 auto 30px;
+  color:#555;
+}
+.btn{
+  display:inline-block;
+  background:#171717;
+  color:#fff;
+  padding:15px 25px;
+  border-radius:3px;
+  border:0;
+  text-decoration:none;
+  margin:5px;
+}
+.btn.light{
+  background:white;
+  color:#171717;
+  border:1px solid #171717;
+}
+section{
+  max-width:1200px;
+  margin:auto;
+  padding:80px 22px;
+}
+.section-title{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  margin-bottom:30px;
+}
+.section-title h2{font-size:38px}
+.filters{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-bottom:30px;
+}
+.filter{
+  padding:10px 17px;
+  border:1px solid #ccc;
+  background:white;
+  border-radius:30px;
+}
+.filter.active{
+  background:#171717;
+  color:white;
+}
+.products{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+.product{
+  background:white;
+  border:1px solid #e3e3e3;
+  overflow:hidden;
+}
+.product-img{
+  height:300px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:50px;
+  background:#eee9e2;
+}
+.product-info{padding:18px}
+.product-info h3{margin-bottom:8px}
+.price{font-weight:bold;margin-bottom:14px}
+.add{
+  width:100%;
+  padding:12px;
+  border:0;
+  background:#171717;
+  color:white;
+}
+.about{
+  background:#171717;
+  color:white;
+  max-width:none;
+}
+.about-inner{
+  max-width:1200px;
+  margin:auto;
+  padding:90px 22px;
+}
+.about h2{
+  font-size:55px;
+  margin-bottom:25px;
+}
+.about p{
+  max-width:700px;
+  line-height:1.8;
+  color:#ddd;
+}
+.values{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+  margin-top:45px;
+}
+.value{
+  border-top:1px solid #555;
+  padding-top:20px;
+}
+.value b{display:block;margin-bottom:10px}
+footer{
+  background:#111;
+  color:#aaa;
+  padding:35px 22px;
+  text-align:center;
+}
+.cart{
+  position:fixed;
+  right:0;
+  top:0;
+  width:min(420px,100%);
+  height:100%;
+  background:white;
+  z-index:50;
+  box-shadow:-10px 0 30px rgba(0,0,0,.15);
+  transform:translateX(100%);
+  transition:.3s;
+  padding:25px;
+  overflow:auto;
+}
+.cart.open{transform:translateX(0)}
+.cart-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:25px;
+}
+.close{
+  border:0;
+  background:#eee;
+  border-radius:50%;
+  width:35px;
+  height:35px;
+}
+.cart-item{
+  display:flex;
+  justify-content:space-between;
+  border-bottom:1px solid #ddd;
+  padding:15px 0;
+}
+.total{
+  display:flex;
+  justify-content:space-between;
+  font-size:20px;
+  font-weight:bold;
+  margin:25px 0;
+}
+.checkout{
+  width:100%;
+  padding:15px;
+  background:#171717;
+  color:white;
+  border:0;
+}
+@media(max-width:800px){
+  .navlinks{display:none}
+  .products{grid-template-columns:repeat(2,1fr)}
+  .values{grid-template-columns:repeat(2,1fr)}
+  .product-img{height:220px}
+}
+@media(max-width:500px){
+  .products{grid-template-columns:1fr 1fr;gap:10px}
+  .product-img{height:180px}
+  .hero{min-height:520px}
+  .section-title h2{font-size:30px}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="nav">
+    <div class="logo">SERBELLA</div>
+    <nav class="navlinks">
+      <a href="#shop">Shop</a>
+      <a href="#story">Our Story</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="cart-btn" onclick="openCart()">
+      Bag (<span id="cartCount">0</span>)
+    </button>
+  </div>
+</header>
+<main>
+<section class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">SERBELLA SUMMER COLLECTION 2026</div>
+    <h1>SERBELLA</h1>
+    <p>
+      Love, made beautiful. Clean silhouettes, soft fabrics,
+      and timeless details designed for everyday life.
+    </p>
+    <a class="btn" href="#shop">SHOP COLLECTION</a>
+    <a class="btn light" href="#story">OUR STORY</a>
+  </div>
+</section>
+<section id="shop">
+  <div class="section-title">
+    <div>
+      <div class="eyebrow">THE COLLECTION</div>
+      <h2>Shop SERBELLA</h2>
+    </div>
+  </div>
+  <div class="filters">
+    <button class="filter active" onclick="filterProducts('All',this)">All</button>
+    <button class="filter" onclick="filterProducts('T-Shirts',this)">T-Shirts</button>
+    <button class="filter" onclick="filterProducts('Hoodies',this)">Hoodies</button>
+    <button class="filter" onclick="filterProducts('Pants',this)">Pants</button>
+    <button class="filter" onclick="filterProducts('Shorts',this)">Shorts</button>
+    <button class="filter" onclick="filterProducts('Dresses',this)">Dresses</button>
+  </div>
+  <div class="products" id="products"></div>
+</section>
+<div class="about" id="story">
+  <div class="about-inner">
+    <div class="eyebrow">OUR STORY</div>
+    <h2>Love, Made Beautiful.</h2>
+    <p>
+      SERBELLA brings together “Ser,” the Armenian word for love,
+      and “Bella,” meaning beautiful in Spanish and Italian.
+      We created SERBELLA around a simple belief:
+      what you wear should feel like you.
+      Our collections are designed to be easy, modern,
+      comfortable, and memorable.
+    </p>
+    <div class="values">
+      <div class="value">
+        <b>01 — Premium quality</b>
+        Thoughtful materials and clean finishing.
+      </div>
+      <div class="value">
+        <b>02 — Timeless design</b>
+        Pieces made to work beyond one season.
+      </div>
+      <div class="value">
+        <b>03 — Comfort first</b>
+        Relaxed shapes made for everyday life.
+      </div>
+      <div class="value">
+        <b>04 — SERBELLA identity</b>
+        A recognizable world built around love and beauty.
+      </div>
+    </div>
+  </div>
+</div>
+<section id="contact">
+  <div class="section-title">
+    <div>
+      <div class="eyebrow">CONTACT</div>
+      <h2>Stay connected.</h2>
+    </div>
+  </div>
+  <p style="line-height:1.8;color:#555">
+    Follow SERBELLA for new collections, releases, and updates.
+  </p>
+</section>
+</main>
+<footer>
+  © 2026 SERBELLA® — Love, Made Beautiful.
+</footer>
+<div class="cart" id="cart">
+  <div class="cart-head">
+    <h2>Your Bag</h2>
+    <button class="close" onclick="closeCart()">×</button>
+  </div>
+  <div id="cartItems"></div>
+  <div class="total">
+    <span>Total</span>
+    <span>$<span id="cartTotal">0.00</span></span>
+  </div>
+  <button class="checkout" onclick="checkout()">
+    CHECKOUT
+  </button>
+</div>
+<script>
+const products = [
+  {name:"SERBELLA Essential Tee",category:"T-Shirts",price:35,emoji:"👕"},
+  {name:"SERBELLA Signature Tee",category:"T-Shirts",price:42,emoji:"👕"},
+  {name:"Classic SERBELLA Hoodie",category:"Hoodies",price:75,emoji:"🧥"},
+  {name:"Premium Logo Hoodie",category:"Hoodies",price:85,emoji:"🧥"},
+  {name:"Everyday Relaxed Pants",category:"Pants",price:70,emoji:"👖"},
+  {name:"SERBELLA Straight Pants",category:"Pants",price:78,emoji:"👖"},
+  {name:"Summer Essential Shorts",category:"Shorts",price:45,emoji:"🩳"},
+  {name:"SERBELLA Summer Dress",category:"Dresses",price:85,emoji:"👗"}
+];
+let cart = [];
+function renderProducts(list=products){
+  const box=document.getElementById("products");
+  box.innerHTML=list.map((p,i)=>`
+    <article class="product">
+      <div class="product-img">${p.emoji}</div>
+      <div class="product-info">
+        <h3>${p.name}</h3>
+        <div>${p.category}</div>
+        <div class="price">$${p.price.toFixed(2)}</div>
+        <button class="add" onclick="addToCart(${products.indexOf(p)})">
+          ADD TO BAG
+        </button>
+      </div>
+    </article>
+  `).join("");
+}
+function filterProducts(category,button){
+  document.querySelectorAll(".filter").forEach(b=>b.classList.remove("active"));
+  button.classList.add("active");
+  if(category==="All"){
+    renderProducts(products);
+  }else{
+    renderProducts(products.filter(p=>p.category===category));
+  }
+}
+function addToCart(index){
+  cart.push(products[index]);
+  updateCart();
+  openCart();
+}
+function updateCart(){
+  document.getElementById("cartCount").textContent=cart.length;
+  const items=document.getElementById("cartItems");
+  if(cart.length===0){
+    items.innerHTML="<p>Your bag is empty.</p>";
+  }else{
+    items.innerHTML=cart.map((p,i)=>`
+      <div class="cart-item">
+        <div>
+          <b>${p.name}</b><br>
+          $${p.price.toFixed(2)}
+        </div>
+        <button onclick="removeItem(${i})">Remove</button>
+      </div>
+    `).join("");
+  }
+  const total=cart.reduce((sum,p)=>sum+p.price,0);
+  document.getElementById("cartTotal").textContent=total.toFixed(2);
+}
+function removeItem(index){
+  cart.splice(index,1);
+  updateCart();
+}
+function openCart(){
+  document.getElementById("cart").classList.add("open");
+}
+function closeCart(){
+  document.getElementById("cart").classList.remove("open");
+}
+function checkout(){
+  if(cart.length===0){
+    alert("Your bag is empty.");
+    return;
+  }
+  alert(
+    "SERBELLA checkout is ready for the next step. " +
+    "A real payment provider still needs to be connected."
+  );
+}
+renderProducts();
+updateCart();
+</script>
+</body>
+</html>
