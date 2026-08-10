@@ -4,15 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>SERBELLA® — Love, Made Beautiful.</title>
+<title>SERBELLA® — LOVE MADE BEAUTIFUL</title>
 
 <style>
 :root{
-  --black:#111;
-  --cream:#f5f2ec;
+  --black:#080808;
+  --dark:#111;
+  --cream:#eee9df;
   --white:#fff;
-  --gray:#777;
-  --line:#dedbd5;
+  --gold:#c7a96b;
+  --gray:#999;
 }
 
 *{
@@ -26,18 +27,9 @@ html{
 }
 
 body{
+  background:var(--black);
+  color:white;
   font-family:Arial,Helvetica,sans-serif;
-  background:var(--cream);
-  color:var(--black);
-}
-
-button,
-input{
-  font:inherit;
-}
-
-button{
-  cursor:pointer;
 }
 
 a{
@@ -45,92 +37,132 @@ a{
   text-decoration:none;
 }
 
-/* HEADER */
+button{
+  font:inherit;
+  cursor:pointer;
+}
+
+/* ================= HEADER ================= */
 
 header{
-  position:sticky;
+  position:fixed;
   top:0;
+  left:0;
+  right:0;
   z-index:100;
-  background:rgba(245,242,236,.94);
-  backdrop-filter:blur(15px);
-  border-bottom:1px solid var(--line);
+  background:rgba(8,8,8,.82);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(255,255,255,.1);
 }
 
 .nav{
-  max-width:1300px;
-  height:76px;
+  max-width:1400px;
+  height:78px;
   margin:auto;
-  padding:0 25px;
+  padding:0 28px;
   display:flex;
   align-items:center;
   justify-content:space-between;
 }
 
 .logo{
-  font-size:25px;
-  font-weight:800;
-  letter-spacing:6px;
+  font-size:24px;
+  font-weight:900;
+  letter-spacing:7px;
 }
 
-.nav-links{
+.navlinks{
   display:flex;
-  gap:32px;
-  font-size:13px;
+  gap:35px;
+  font-size:11px;
+  letter-spacing:2px;
   text-transform:uppercase;
+}
+
+.navlinks a{
+  transition:.3s;
+}
+
+.navlinks a:hover{
+  color:var(--gold);
+}
+
+.bag{
+  background:white;
+  color:black;
+  border:0;
+  padding:12px 18px;
+  border-radius:30px;
+  font-size:11px;
   letter-spacing:1px;
 }
 
-.nav-links a:hover{
-  opacity:.55;
-}
-
-.bag-button{
-  border:1px solid var(--black);
-  background:var(--black);
-  color:white;
-  padding:11px 17px;
-  border-radius:30px;
-}
-
-/* HERO */
+/* ================= HERO ================= */
 
 .hero{
-  min-height:calc(100vh - 76px);
+  min-height:100vh;
+  position:relative;
+  overflow:hidden;
   display:flex;
   align-items:center;
   justify-content:center;
   text-align:center;
-  padding:70px 20px;
   background:
-    radial-gradient(circle at 20% 20%,#fff 0,transparent 35%),
-    linear-gradient(135deg,#ded8ce,#f9f7f2 55%,#e8e2d8);
+    radial-gradient(circle at 50% 45%,#29251f 0,#0b0b0b 42%,#050505 75%);
+}
+
+.hero-bg-text{
+  position:absolute;
+  font-size:clamp(100px,22vw,330px);
+  font-weight:900;
+  letter-spacing:-15px;
+  color:rgba(255,255,255,.025);
+  white-space:nowrap;
+  user-select:none;
+}
+
+.hero-wings{
+  position:absolute;
+  font-size:170px;
+  opacity:.07;
+  letter-spacing:40px;
 }
 
 .hero-content{
+  position:relative;
+  z-index:2;
   max-width:900px;
+  padding:120px 20px 60px;
 }
 
-.hero-label{
-  font-size:11px;
-  letter-spacing:5px;
-  text-transform:uppercase;
-  margin-bottom:28px;
+.hero-small{
+  font-size:10px;
+  letter-spacing:6px;
+  color:#aaa;
+  margin-bottom:30px;
 }
 
 .hero h1{
-  font-size:clamp(60px,12vw,145px);
+  font-size:clamp(65px,13vw,170px);
+  line-height:.8;
   letter-spacing:12px;
-  line-height:.86;
-  font-weight:800;
-  margin-bottom:32px;
+  font-weight:900;
+  margin-bottom:35px;
 }
 
-.hero p{
-  max-width:650px;
-  margin:auto;
-  color:#555;
-  font-size:18px;
-  line-height:1.7;
+.hero-tagline{
+  font-size:14px;
+  letter-spacing:5px;
+  text-transform:uppercase;
+  color:#c9c4ba;
+}
+
+.hero-description{
+  max-width:600px;
+  margin:25px auto;
+  color:#999;
+  line-height:1.8;
+  font-size:15px;
 }
 
 .hero-buttons{
@@ -141,98 +173,169 @@ header{
   display:inline-block;
   padding:16px 27px;
   margin:5px;
-  border:1px solid var(--black);
+  border:1px solid white;
+  font-size:10px;
+  letter-spacing:2px;
   text-transform:uppercase;
-  letter-spacing:1.5px;
-  font-size:12px;
-  transition:.25s;
+  transition:.3s;
+}
+
+.btn-white{
+  background:white;
+  color:black;
 }
 
 .btn-dark{
-  background:var(--black);
-  color:white;
-}
-
-.btn-light{
   background:transparent;
+  color:white;
 }
 
 .btn:hover{
-  transform:translateY(-2px);
+  transform:translateY(-3px);
 }
 
-/* COLLECTION */
+/* ================= MARQUEE ================= */
+
+.marquee{
+  overflow:hidden;
+  white-space:nowrap;
+  border-top:1px solid #222;
+  border-bottom:1px solid #222;
+  padding:17px 0;
+  background:#0b0b0b;
+}
+
+.marquee-track{
+  display:inline-block;
+  animation:move 25s linear infinite;
+  font-size:11px;
+  letter-spacing:5px;
+  color:#aaa;
+}
+
+@keyframes move{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
+}
+
+/* ================= SECTION ================= */
 
 .section{
-  max-width:1300px;
+  max-width:1400px;
   margin:auto;
-  padding:100px 25px;
+  padding:110px 28px;
 }
 
-.heading{
-  margin-bottom:40px;
-}
-
-.heading-label{
-  font-size:11px;
-  letter-spacing:4px;
+.label{
+  color:var(--gold);
+  font-size:10px;
+  letter-spacing:5px;
   text-transform:uppercase;
-  color:#777;
-  margin-bottom:12px;
+  margin-bottom:15px;
 }
 
-.heading h2{
-  font-size:clamp(35px,6vw,65px);
-  letter-spacing:-2px;
+.title{
+  font-size:clamp(40px,7vw,80px);
+  letter-spacing:-3px;
+  line-height:.95;
 }
 
-.filters{
-  display:flex;
-  gap:8px;
-  flex-wrap:wrap;
-  margin-bottom:30px;
+.subtitle{
+  color:#888;
+  max-width:600px;
+  line-height:1.8;
+  margin-top:20px;
 }
 
-.filter{
-  border:1px solid #bbb;
-  background:transparent;
-  padding:10px 18px;
-  border-radius:30px;
-}
-
-.filter.active,
-.filter:hover{
-  background:var(--black);
-  color:white;
-}
-
-/* PRODUCTS */
+/* ================= PRODUCTS ================= */
 
 .products{
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:18px;
+  gap:16px;
+  margin-top:55px;
 }
 
 .product{
-  background:white;
-  border:1px solid var(--line);
+  background:#111;
+  border:1px solid #242424;
   overflow:hidden;
-  transition:.3s;
+  transition:.35s;
 }
 
 .product:hover{
-  transform:translateY(-5px);
-  box-shadow:0 15px 35px rgba(0,0,0,.08);
+  transform:translateY(-8px);
+  border-color:#555;
 }
 
-.product-image{
-  height:350px;
+.product-art{
+  height:410px;
+  position:relative;
+  overflow:hidden;
   display:flex;
   align-items:center;
   justify-content:center;
-  background:#e9e4dc;
-  font-size:70px;
+  background:
+    radial-gradient(circle,#333 0,#161616 45%,#090909 100%);
+}
+
+.product-art::after{
+  content:"SERBELLA";
+  position:absolute;
+  font-size:55px;
+  font-weight:900;
+  letter-spacing:4px;
+  color:rgba(255,255,255,.035);
+  transform:rotate(-12deg);
+}
+
+.clothing{
+  position:relative;
+  z-index:2;
+  width:170px;
+  height:220px;
+  background:#050505;
+  clip-path:polygon(
+    25% 0,
+    42% 10%,
+    58% 10%,
+    75% 0,
+    100% 25%,
+    80% 42%,
+    75% 100%,
+    25% 100%,
+    20% 42%,
+    0 25%
+  );
+  border:1px solid #555;
+  box-shadow:0 25px 50px rgba(0,0,0,.6);
+}
+
+.clothing.light{
+  background:#e8e4dc;
+}
+
+.clothing.gold{
+  background:#1a1711;
+}
+
+.clothing-text{
+  position:absolute;
+  top:45%;
+  left:50%;
+  transform:translate(-50%,-50%) rotate(-90deg);
+  white-space:nowrap;
+  font-size:17px;
+  font-weight:900;
+  letter-spacing:4px;
+}
+
+.clothing-symbol{
+  position:absolute;
+  top:57%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  font-size:25px;
 }
 
 .product-info{
@@ -240,189 +343,206 @@ header{
 }
 
 .product-name{
+  font-size:14px;
   font-weight:bold;
-  font-size:16px;
-  margin-bottom:7px;
+  margin-bottom:8px;
 }
 
 .product-category{
-  color:#888;
-  font-size:12px;
-  margin-bottom:15px;
+  font-size:10px;
+  color:#777;
+  letter-spacing:1px;
+  text-transform:uppercase;
 }
 
-.product-bottom{
+.product-row{
   display:flex;
-  align-items:center;
   justify-content:space-between;
-  gap:10px;
+  align-items:center;
+  margin-top:18px;
 }
 
-.product-price{
+.price{
   font-weight:bold;
 }
 
-.add-button{
-  border:0;
-  background:var(--black);
-  color:white;
-  padding:10px 14px;
+.add{
+  border:1px solid #555;
+  background:white;
+  color:black;
+  padding:9px 14px;
+  font-size:10px;
+  letter-spacing:1px;
 }
 
-/* STORY */
+/* ================= BRAND DESIGN ================= */
+
+.design{
+  background:#eee9df;
+  color:#0a0a0a;
+  position:relative;
+  overflow:hidden;
+}
+
+.design-inner{
+  max-width:1400px;
+  margin:auto;
+  padding:120px 28px;
+  position:relative;
+}
+
+.design-bg{
+  position:absolute;
+  right:-70px;
+  top:50%;
+  transform:translateY(-50%) rotate(90deg);
+  font-size:180px;
+  font-weight:900;
+  color:rgba(0,0,0,.04);
+}
+
+.design h2{
+  font-size:clamp(50px,8vw,110px);
+  line-height:.85;
+  max-width:900px;
+  letter-spacing:-5px;
+}
+
+.design-copy{
+  max-width:620px;
+  margin-top:30px;
+  line-height:1.9;
+  color:#555;
+}
+
+.symbols{
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
+  margin-top:50px;
+}
+
+.symbol{
+  border:1px solid #bbb;
+  width:100px;
+  height:100px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:38px;
+  background:#f8f5ef;
+}
+
+.symbol small{
+  display:block;
+  font-size:8px;
+}
+
+/* ================= STORY ================= */
 
 .story{
-  background:var(--black);
-  color:white;
+  background:#080808;
 }
 
-.story-inner{
-  max-width:1300px;
-  margin:auto;
-  padding:110px 25px;
-}
-
-.story-label{
-  color:#aaa;
-  font-size:11px;
-  letter-spacing:5px;
-  margin-bottom:20px;
+.story-grid{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:80px;
+  align-items:center;
 }
 
 .story h2{
-  font-size:clamp(45px,7vw,90px);
-  line-height:.95;
-  max-width:800px;
-  margin-bottom:30px;
+  font-size:clamp(50px,7vw,100px);
+  line-height:.9;
 }
 
 .story-text{
-  color:#cfcfcf;
-  max-width:700px;
-  line-height:1.9;
-  font-size:17px;
+  color:#888;
+  line-height:2;
+  margin-top:30px;
 }
 
-.values{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:30px;
-  margin-top:70px;
-}
-
-.value{
-  border-top:1px solid #444;
-  padding-top:20px;
-}
-
-.value-number{
-  color:#999;
-  font-size:12px;
-  margin-bottom:15px;
-}
-
-.value-title{
-  font-weight:bold;
-  margin-bottom:10px;
-}
-
-/* NEWSLETTER */
-
-.newsletter{
-  text-align:center;
-  max-width:800px;
-  margin:auto;
-}
-
-.newsletter h2{
-  font-size:45px;
-  margin-bottom:15px;
-}
-
-.newsletter p{
-  color:#777;
-  line-height:1.7;
-  margin-bottom:25px;
-}
-
-.newsletter-form{
+.story-card{
+  border:1px solid #292929;
+  min-height:450px;
   display:flex;
-  max-width:500px;
-  margin:auto;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:
+    radial-gradient(circle,#252525,#080808 65%);
 }
 
-.newsletter-form input{
-  flex:1;
-  min-width:0;
-  border:1px solid #bbb;
-  background:white;
-  padding:15px;
-  outline:none;
+.story-card-big{
+  font-size:80px;
+  font-weight:900;
+  letter-spacing:8px;
 }
 
-.newsletter-form button{
-  background:var(--black);
-  color:white;
-  border:0;
-  padding:15px 22px;
+.story-card-small{
+  color:var(--gold);
+  letter-spacing:4px;
+  font-size:10px;
+  margin-top:15px;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 
 footer{
-  background:#0c0c0c;
-  color:#aaa;
-  padding:45px 25px;
+  background:#050505;
+  border-top:1px solid #222;
+  padding:70px 28px 30px;
 }
 
-.footer-inner{
-  max-width:1300px;
+.footer{
+  max-width:1400px;
   margin:auto;
-  display:flex;
-  justify-content:space-between;
-  gap:30px;
 }
 
 .footer-logo{
-  color:white;
-  font-size:22px;
-  font-weight:bold;
-  letter-spacing:5px;
+  font-size:55px;
+  font-weight:900;
+  letter-spacing:8px;
 }
 
-.footer-links{
+.footer-bottom{
+  border-top:1px solid #222;
+  margin-top:60px;
+  padding-top:25px;
   display:flex;
-  gap:25px;
-  font-size:12px;
+  justify-content:space-between;
+  color:#666;
+  font-size:10px;
 }
 
-/* CART */
+/* ================= CART ================= */
 
-.cart-overlay{
+.overlay{
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,.45);
-  z-index:150;
+  background:rgba(0,0,0,.7);
+  z-index:200;
   opacity:0;
   pointer-events:none;
   transition:.3s;
 }
 
-.cart-overlay.open{
+.overlay.open{
   opacity:1;
   pointer-events:auto;
 }
 
 .cart{
   position:fixed;
-  right:0;
+  z-index:250;
   top:0;
-  width:min(450px,100%);
+  right:0;
   height:100%;
-  background:white;
-  z-index:200;
+  width:min(450px,100%);
+  background:#f5f2ec;
+  color:#111;
   transform:translateX(100%);
-  transition:.3s;
+  transition:.35s;
   padding:25px;
   overflow:auto;
 }
@@ -431,42 +551,41 @@ footer{
   transform:translateX(0);
 }
 
-.cart-header{
+.cart-head{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  border-bottom:1px solid var(--line);
+  border-bottom:1px solid #ccc;
   padding-bottom:20px;
 }
 
-.close-cart{
+.close{
   border:0;
-  background:#eee;
+  background:#ddd;
   width:38px;
   height:38px;
   border-radius:50%;
 }
 
 .cart-items{
-  padding:10px 0;
+  padding:15px 0;
 }
 
 .cart-item{
   display:flex;
   justify-content:space-between;
-  gap:15px;
-  padding:20px 0;
-  border-bottom:1px solid var(--line);
+  border-bottom:1px solid #ccc;
+  padding:18px 0;
 }
 
 .remove{
   border:0;
   background:none;
   text-decoration:underline;
-  font-size:12px;
+  font-size:11px;
 }
 
-.cart-total{
+.total{
   display:flex;
   justify-content:space-between;
   font-size:20px;
@@ -477,17 +596,17 @@ footer{
 .checkout{
   width:100%;
   border:0;
-  background:var(--black);
+  background:#080808;
   color:white;
   padding:17px;
-  letter-spacing:1px;
+  letter-spacing:2px;
 }
 
-/* MOBILE */
+/* ================= MOBILE ================= */
 
-@media(max-width:900px){
+@media(max-width:950px){
 
-  .nav-links{
+  .navlinks{
     display:none;
   }
 
@@ -495,12 +614,8 @@ footer{
     grid-template-columns:repeat(2,1fr);
   }
 
-  .values{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .product-image{
-    height:260px;
+  .story-grid{
+    grid-template-columns:1fr;
   }
 
 }
@@ -508,39 +623,53 @@ footer{
 @media(max-width:550px){
 
   .nav{
+    height:68px;
     padding:0 15px;
   }
 
   .logo{
-    font-size:20px;
+    font-size:19px;
     letter-spacing:4px;
   }
 
+  .bag{
+    padding:10px 13px;
+  }
+
   .hero{
-    min-height:650px;
+    min-height:850px;
   }
 
   .hero h1{
     font-size:62px;
-    letter-spacing:7px;
+    letter-spacing:6px;
   }
 
-  .hero p{
-    font-size:15px;
+  .hero-wings{
+    font-size:100px;
   }
 
-  .section{
-    padding:70px 15px;
+  .section,
+  .design-inner{
+    padding:80px 16px;
   }
 
   .products{
     grid-template-columns:1fr 1fr;
-    gap:10px;
+    gap:9px;
   }
 
-  .product-image{
-    height:200px;
-    font-size:48px;
+  .product-art{
+    height:260px;
+  }
+
+  .clothing{
+    width:110px;
+    height:160px;
+  }
+
+  .clothing-text{
+    font-size:11px;
   }
 
   .product-info{
@@ -548,42 +677,38 @@ footer{
   }
 
   .product-name{
-    font-size:13px;
+    font-size:12px;
   }
 
-  .product-bottom{
+  .product-row{
     display:block;
   }
 
-  .add-button{
+  .add{
     width:100%;
     margin-top:10px;
   }
 
-  .values{
-    grid-template-columns:1fr;
+  .design h2{
+    letter-spacing:-3px;
   }
 
-  .newsletter-form{
+  .symbols{
+    gap:8px;
+  }
+
+  .symbol{
+    width:75px;
+    height:75px;
+  }
+
+  .footer-logo{
+    font-size:35px;
+  }
+
+  .footer-bottom{
     display:block;
-  }
-
-  .newsletter-form input,
-  .newsletter-form button{
-    width:100%;
-  }
-
-  .newsletter-form button{
-    margin-top:8px;
-  }
-
-  .footer-inner{
-    display:block;
-  }
-
-  .footer-links{
-    margin-top:25px;
-    flex-wrap:wrap;
+    line-height:2;
   }
 
 }
@@ -593,509 +718,482 @@ footer{
 <body>
 
 <header>
-  <div class="nav">
 
-    <a class="logo" href="#">SERBELLA</a>
+<div class="nav">
 
-    <nav class="nav-links">
-      <a href="#shop">Shop</a>
-      <a href="#story">Our Story</a>
-      <a href="#contact">Contact</a>
-    </nav>
+<a href="#" class="logo">SERBELLA</a>
 
-    <button class="bag-button" onclick="openCart()">
-      Bag (<span id="bagCount">0</span>)
-    </button>
+<nav class="navlinks">
+<a href="#shop">Shop</a>
+<a href="#design">Design</a>
+<a href="#story">Our Story</a>
+</nav>
 
-  </div>
+<button class="bag" onclick="openCart()">
+BAG (<span id="count">0</span>)
+</button>
+
+</div>
+
 </header>
+
+<!-- HERO -->
 
 <section class="hero">
 
-  <div class="hero-content">
+<div class="hero-bg-text">SERBELLA</div>
 
-    <div class="hero-label">
-      SERBELLA SUMMER COLLECTION 2026
-    </div>
+<div class="hero-wings">♛</div>
 
-    <h1>SERBELLA</h1>
+<div class="hero-content">
 
-    <p>
-      Love, made beautiful.
-      Modern essentials designed with clean silhouettes,
-      soft fabrics and timeless SERBELLA details.
-    </p>
+<div class="hero-small">
+SERBELLA® / SUMMER 2026
+</div>
 
-    <div class="hero-buttons">
-      <a href="#shop" class="btn btn-dark">
-        Shop Collection
-      </a>
+<h1>SERBELLA</h1>
 
-      <a href="#story" class="btn btn-light">
-        Discover SERBELLA
-      </a>
-    </div>
+<div class="hero-tagline">
+LOVE • MADE • BEAUTIFUL
+</div>
 
-  </div>
+<p class="hero-description">
+A new expression of modern Armenian-inspired luxury.
+Clean silhouettes, powerful graphics and timeless pieces
+created to be worn with confidence.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#shop" class="btn btn-white">
+Shop Collection
+</a>
+
+<a href="#design" class="btn btn-dark">
+Explore The Design
+</a>
+
+</div>
+
+</div>
 
 </section>
+
+<!-- MARQUEE -->
+
+<div class="marquee">
+
+<div class="marquee-track">
+SERBELLA ® &nbsp; LOVE MADE BEAUTIFUL &nbsp;
+SERBELLA ® &nbsp; SUMMER 2026 &nbsp;
+SERBELLA ® &nbsp; LOVE MADE BEAUTIFUL &nbsp;
+SERBELLA ® &nbsp; SUMMER 2026 &nbsp;
+SERBELLA ® &nbsp; LOVE MADE BEAUTIFUL &nbsp;
+SERBELLA ® &nbsp; SUMMER 2026 &nbsp;
+</div>
+
+</div>
+
+<!-- SHOP -->
 
 <section class="section" id="shop">
 
-  <div class="heading">
-    <div class="heading-label">The Collection</div>
-    <h2>Made to live in.</h2>
-  </div>
+<div class="label">
+THE COLLECTION
+</div>
 
-  <div class="filters">
+<h2 class="title">
+SERBELLA ESSENTIALS
+</h2>
 
-    <button class="filter active"
-      onclick="filterProducts('All',this)">
-      All
-    </button>
+<p class="subtitle">
+Signature pieces featuring bold SERBELLA branding,
+minimal luxury details and original graphics.
+</p>
 
-    <button class="filter"
-      onclick="filterProducts('T-Shirts',this)">
-      T-Shirts
-    </button>
-
-    <button class="filter"
-      onclick="filterProducts('Hoodies',this)">
-      Hoodies
-    </button>
-
-    <button class="filter"
-      onclick="filterProducts('Pants',this)">
-      Pants
-    </button>
-
-    <button class="filter"
-      onclick="filterProducts('Shorts',this)">
-      Shorts
-    </button>
-
-    <button class="filter"
-      onclick="filterProducts('Dresses',this)">
-      Dresses
-    </button>
-
-  </div>
-
-  <div class="products" id="products"></div>
+<div class="products" id="products"></div>
 
 </section>
 
-<section class="story" id="story">
+<!-- DESIGN -->
 
-  <div class="story-inner">
+<section class="design" id="design">
 
-    <div class="story-label">
-      OUR STORY
-    </div>
+<div class="design-bg">
+SERBELLA
+</div>
 
-    <h2>
-      Love, Made Beautiful.
-    </h2>
+<div class="design-inner">
 
-    <p class="story-text">
-      SERBELLA brings together “Ser,” the Armenian word for love,
-      and “Bella,” meaning beautiful in Spanish and Italian.
-      We created SERBELLA around a simple belief:
-      what you wear should feel like you.
-      Our collections are designed to be easy, modern,
-      comfortable and memorable.
-    </p>
+<div class="label">
+THE SERBELLA LANGUAGE
+</div>
 
-    <div class="values">
+<h2>
+LOVE.<br>
+BEAUTY.<br>
+IDENTITY.
+</h2>
 
-      <div class="value">
-        <div class="value-number">01</div>
-        <div class="value-title">Premium Quality</div>
-        <p>Thoughtful materials and clean finishing.</p>
-      </div>
+<p class="design-copy">
+SERBELLA combines modern fashion with Armenian-inspired
+identity and symbols of love, beauty and strength.
+Our future collections can feature wings, hearts,
+cross-inspired geometry, Armenian-inspired motifs,
+flags, crowns and oversized SERBELLA graphics.
+</p>
 
-      <div class="value">
-        <div class="value-number">02</div>
-        <div class="value-title">Timeless Design</div>
-        <p>Pieces designed to go beyond one season.</p>
-      </div>
+<div class="symbols">
 
-      <div class="value">
-        <div class="value-number">03</div>
-        <div class="value-title">Comfort First</div>
-        <p>Relaxed pieces made for everyday life.</p>
-      </div>
+<div class="symbol">♡</div>
+<div class="symbol">♛</div>
+<div class="symbol">✦</div>
+<div class="symbol">♥</div>
+<div class="symbol">✧</div>
 
-      <div class="value">
-        <div class="value-number">04</div>
-        <div class="value-title">SERBELLA Identity</div>
-        <p>A recognizable world built around love and beauty.</p>
-      </div>
+</div>
 
-    </div>
-
-  </div>
+</div>
 
 </section>
 
-<section class="section" id="contact">
+<!-- STORY -->
 
-  <div class="newsletter">
+<section class="section story" id="story">
 
-    <div class="heading-label">
-      STAY CONNECTED
-    </div>
+<div class="story-grid">
 
-    <h2>
-      Join SERBELLA.
-    </h2>
+<div>
 
-    <p>
-      Be the first to know about new collections,
-      releases and SERBELLA updates.
-    </p>
+<div class="label">
+OUR STORY
+</div>
 
-    <form class="newsletter-form" onsubmit="subscribe(event)">
+<h2>
+LOVE,<br>
+MADE<br>
+BEAUTIFUL.
+</h2>
 
-      <input
-        type="email"
-        placeholder="Your email address"
-        required
-      >
+<p class="story-text">
+SERBELLA brings together “Ser,” the Armenian word for love,
+and “Bella,” meaning beautiful in Spanish and Italian.
+The brand is built around a simple idea:
+what you wear should feel like you.
+</p>
 
-      <button type="submit">
-        JOIN
-      </button>
+</div>
 
-    </form>
+<div class="story-card">
 
-  </div>
+<div>
+
+<div class="story-card-big">
+SER
+</div>
+
+<div class="story-card-small">
+LOVE / BEAUTY / SERBELLA
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
+
+<!-- FOOTER -->
 
 <footer>
 
-  <div class="footer-inner">
+<div class="footer">
 
-    <div class="footer-logo">
-      SERBELLA
-    </div>
+<div class="footer-logo">
+SERBELLA
+</div>
 
-    <div class="footer-links">
-      <a href="#shop">Shop</a>
-      <a href="#story">Our Story</a>
-      <a href="#contact">Contact</a>
-    </div>
+<div style="margin-top:18px;color:#777">
+LOVE, MADE BEAUTIFUL.
+</div>
 
-    <div>
-      © 2026 SERBELLA®
-    </div>
+<div class="footer-bottom">
 
-  </div>
+<div>
+© 2026 SERBELLA®
+</div>
+
+<div>
+SUMMER COLLECTION 2026
+</div>
+
+</div>
+
+</div>
 
 </footer>
 
-<div
-  class="cart-overlay"
-  id="cartOverlay"
-  onclick="closeCart()">
-</div>
+<!-- CART -->
+
+<div class="overlay" id="overlay" onclick="closeCart()"></div>
 
 <aside class="cart" id="cart">
 
-  <div class="cart-header">
+<div class="cart-head">
 
-    <h2>Your Bag</h2>
+<h2>Your Bag</h2>
 
-    <button
-      class="close-cart"
-      onclick="closeCart()">
-      ×
-    </button>
+<button class="close" onclick="closeCart()">
+×
+</button>
 
-  </div>
+</div>
 
-  <div
-    class="cart-items"
-    id="cartItems">
-  </div>
+<div class="cart-items" id="cartItems"></div>
 
-  <div class="cart-total">
+<div class="total">
 
-    <span>Total</span>
+<span>Total</span>
 
-    <span>
-      $<span id="cartTotal">0.00</span>
-    </span>
+<span>
+$<span id="total">0.00</span>
+</span>
 
-  </div>
+</div>
 
-  <button
-    class="checkout"
-    onclick="checkout()">
-    CHECKOUT
-  </button>
+<button class="checkout" onclick="checkout()">
+CHECKOUT
+</button>
 
 </aside>
 
 <script>
 
-const products = [
+const products=[
 
-  {
-    name:"SERBELLA Essential Tee",
-    category:"T-Shirts",
-    price:35,
-    icon:"👕"
-  },
+{
+name:"SERBELLA Angel Tee",
+category:"T-Shirts",
+price:45,
+type:"dark",
+symbol:"♡"
+},
 
-  {
-    name:"SERBELLA Signature Tee",
-    category:"T-Shirts",
-    price:42,
-    icon:"👕"
-  },
+{
+name:"SERBELLA Armenian Edition",
+category:"T-Shirts",
+price:50,
+type:"light",
+symbol:"✦"
+},
 
-  {
-    name:"Classic SERBELLA Hoodie",
-    category:"Hoodies",
-    price:75,
-    icon:"🧥"
-  },
+{
+name:"SERBELLA Wings Hoodie",
+category:"Hoodies",
+price:95,
+type:"dark",
+symbol:"♛"
+},
 
-  {
-    name:"Premium Logo Hoodie",
-    category:"Hoodies",
-    price:85,
-    icon:"🧥"
-  },
+{
+name:"SERBELLA Signature Hoodie",
+category:"Hoodies",
+price:110,
+type:"gold",
+symbol:"♥"
+},
 
-  {
-    name:"Everyday Relaxed Pants",
-    category:"Pants",
-    price:70,
-    icon:"👖"
-  },
+{
+name:"SERBELLA Luxury Pants",
+category:"Pants",
+price:120,
+type:"dark",
+symbol:"✦"
+},
 
-  {
-    name:"SERBELLA Straight Pants",
-    category:"Pants",
-    price:78,
-    icon:"👖"
-  },
+{
+name:"SERBELLA Signature Shorts",
+category:"Shorts",
+price:65,
+type:"light",
+symbol:"♡"
+},
 
-  {
-    name:"Summer Essential Shorts",
-    category:"Shorts",
-    price:45,
-    icon:"🩳"
-  },
+{
+name:"SERBELLA Angel Dress",
+category:"Dresses",
+price:135,
+type:"gold",
+symbol:"♥"
+},
 
-  {
-    name:"SERBELLA Summer Dress",
-    category:"Dresses",
-    price:85,
-    icon:"👗"
-  }
+{
+name:"SERBELLA Heritage Tee",
+category:"T-Shirts",
+price:55,
+type:"dark",
+symbol:"♛"
+}
 
 ];
 
-let cart = [];
+let cart=[];
 
 function renderProducts(list=products){
 
-  const container =
-    document.getElementById("products");
+const box=document.getElementById("products");
 
-  container.innerHTML =
-    list.map(product => `
+box.innerHTML=list.map((p,i)=>`
 
-      <article class="product">
+<article class="product">
 
-        <div class="product-image">
-          ${product.icon}
-        </div>
+<div class="product-art">
 
-        <div class="product-info">
+<div class="clothing ${p.type}">
 
-          <div class="product-name">
-            ${product.name}
-          </div>
+<div class="clothing-text">
+SERBELLA
+</div>
 
-          <div class="product-category">
-            ${product.category}
-          </div>
+<div class="clothing-symbol">
+${p.symbol}
+</div>
 
-          <div class="product-bottom">
+</div>
 
-            <div class="product-price">
-              $${product.price.toFixed(2)}
-            </div>
+</div>
 
-            <button
-              class="add-button"
-              onclick="addToCart(${products.indexOf(product)})">
+<div class="product-info">
 
-              Add
+<div class="product-name">
+${p.name}
+</div>
 
-            </button>
+<div class="product-category">
+${p.category}
+</div>
 
-          </div>
+<div class="product-row">
 
-        </div>
+<div class="price">
+$${p.price.toFixed(2)}
+</div>
 
-      </article>
+<button
+class="add"
+onclick="addToCart(${i})">
+ADD
+</button>
 
-    `).join("");
-}
+</div>
 
-function filterProducts(category,button){
+</div>
 
-  document
-    .querySelectorAll(".filter")
-    .forEach(item =>
-      item.classList.remove("active")
-    );
+</article>
 
-  button.classList.add("active");
+`).join("");
 
-  if(category === "All"){
-
-    renderProducts(products);
-
-  }else{
-
-    renderProducts(
-      products.filter(
-        product =>
-          product.category === category
-      )
-    );
-
-  }
 }
 
 function addToCart(index){
 
-  cart.push(products[index]);
+cart.push(products[index]);
 
-  updateCart();
+updateCart();
 
-  openCart();
+openCart();
+
 }
 
-function removeFromCart(index){
+function removeItem(index){
 
-  cart.splice(index,1);
+cart.splice(index,1);
 
-  updateCart();
+updateCart();
+
 }
 
 function updateCart(){
 
-  document.getElementById("bagCount")
-    .textContent = cart.length;
+document.getElementById("count")
+.textContent=cart.length;
 
-  const container =
-    document.getElementById("cartItems");
+const box=document.getElementById("cartItems");
 
-  if(cart.length === 0){
+if(cart.length===0){
 
-    container.innerHTML =
-      "<p style='padding:25px 0;color:#777'>Your bag is empty.</p>";
+box.innerHTML=
+"<p style='color:#777;padding:25px 0'>Your bag is empty.</p>";
 
-  }else{
+}else{
 
-    container.innerHTML =
-      cart.map((product,index) => `
+box.innerHTML=cart.map((p,i)=>`
 
-        <div class="cart-item">
+<div class="cart-item">
 
-          <div>
+<div>
+<strong>${p.name}</strong>
+<br>
+$${p.price.toFixed(2)}
+</div>
 
-            <strong>
-              ${product.name}
-            </strong>
+<button
+class="remove"
+onclick="removeItem(${i})">
+Remove
+</button>
 
-            <br>
+</div>
 
-            <span>
-              $${product.price.toFixed(2)}
-            </span>
+`).join("");
 
-          </div>
+}
 
-          <button
-            class="remove"
-            onclick="removeFromCart(${index})">
+const total=cart.reduce(
+(sum,p)=>sum+p.price,0
+);
 
-            Remove
+document.getElementById("total")
+.textContent=total.toFixed(2);
 
-          </button>
-
-        </div>
-
-      `).join("");
-
-  }
-
-  const total =
-    cart.reduce(
-      (sum,product) =>
-        sum + product.price,
-      0
-    );
-
-  document.getElementById("cartTotal")
-    .textContent = total.toFixed(2);
 }
 
 function openCart(){
 
-  document
-    .getElementById("cart")
-    .classList.add("open");
+document.getElementById("cart")
+.classList.add("open");
 
-  document
-    .getElementById("cartOverlay")
-    .classList.add("open");
+document.getElementById("overlay")
+.classList.add("open");
+
 }
 
 function closeCart(){
 
-  document
-    .getElementById("cart")
-    .classList.remove("open");
+document.getElementById("cart")
+.classList.remove("open");
 
-  document
-    .getElementById("cartOverlay")
-    .classList.remove("open");
+document.getElementById("overlay")
+.classList.remove("open");
+
 }
 
 function checkout(){
 
-  if(cart.length === 0){
+if(cart.length===0){
 
-    alert("Your bag is empty.");
+alert("Your SERBELLA bag is empty.");
 
-    return;
-  }
+return;
 
-  alert(
-    "SERBELLA checkout is ready for the next step. " +
-    "A real payment provider must be connected before accepting real orders."
-  );
 }
 
-function subscribe(event){
+alert(
+"SERBELLA checkout is ready. " +
+"A real payment provider must be connected before accepting real orders."
+);
 
-  event.preventDefault();
-
-  alert(
-    "Thank you for joining SERBELLA."
-  );
-
-  event.target.reset();
 }
 
 renderProducts();
