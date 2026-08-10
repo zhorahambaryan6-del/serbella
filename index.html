@@ -1,1206 +1,437 @@
+index.html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>SERBELLA® — LOVE MADE BEAUTIFUL</title>
-
-<style>
-:root{
-  --black:#080808;
-  --dark:#111;
-  --cream:#eee9df;
-  --white:#fff;
-  --gold:#c7a96b;
-  --gray:#999;
-}
-
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  background:var(--black);
-  color:white;
-  font-family:Arial,Helvetica,sans-serif;
-}
-
-a{
-  color:inherit;
-  text-decoration:none;
-}
-
-button{
-  font:inherit;
-  cursor:pointer;
-}
-
-/* ================= HEADER ================= */
-
-header{
-  position:fixed;
-  top:0;
-  left:0;
-  right:0;
-  z-index:100;
-  background:rgba(8,8,8,.82);
-  backdrop-filter:blur(18px);
-  border-bottom:1px solid rgba(255,255,255,.1);
-}
-
-.nav{
-  max-width:1400px;
-  height:78px;
-  margin:auto;
-  padding:0 28px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
-
-.logo{
-  font-size:24px;
-  font-weight:900;
-  letter-spacing:7px;
-}
-
-.navlinks{
-  display:flex;
-  gap:35px;
-  font-size:11px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-}
-
-.navlinks a{
-  transition:.3s;
-}
-
-.navlinks a:hover{
-  color:var(--gold);
-}
-
-.bag{
-  background:white;
-  color:black;
-  border:0;
-  padding:12px 18px;
-  border-radius:30px;
-  font-size:11px;
-  letter-spacing:1px;
-}
-
-/* ================= HERO ================= */
-
-.hero{
-  min-height:100vh;
-  position:relative;
-  overflow:hidden;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  background:
-    radial-gradient(circle at 50% 45%,#29251f 0,#0b0b0b 42%,#050505 75%);
-}
-
-.hero-bg-text{
-  position:absolute;
-  font-size:clamp(100px,22vw,330px);
-  font-weight:900;
-  letter-spacing:-15px;
-  color:rgba(255,255,255,.025);
-  white-space:nowrap;
-  user-select:none;
-}
-
-.hero-wings{
-  position:absolute;
-  font-size:170px;
-  opacity:.07;
-  letter-spacing:40px;
-}
-
-.hero-content{
-  position:relative;
-  z-index:2;
-  max-width:900px;
-  padding:120px 20px 60px;
-}
-
-.hero-small{
-  font-size:10px;
-  letter-spacing:6px;
-  color:#aaa;
-  margin-bottom:30px;
-}
-
-.hero h1{
-  font-size:clamp(65px,13vw,170px);
-  line-height:.8;
-  letter-spacing:12px;
-  font-weight:900;
-  margin-bottom:35px;
-}
-
-.hero-tagline{
-  font-size:14px;
-  letter-spacing:5px;
-  text-transform:uppercase;
-  color:#c9c4ba;
-}
-
-.hero-description{
-  max-width:600px;
-  margin:25px auto;
-  color:#999;
-  line-height:1.8;
-  font-size:15px;
-}
-
-.hero-buttons{
-  margin-top:35px;
-}
-
-.btn{
-  display:inline-block;
-  padding:16px 27px;
-  margin:5px;
-  border:1px solid white;
-  font-size:10px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  transition:.3s;
-}
-
-.btn-white{
-  background:white;
-  color:black;
-}
-
-.btn-dark{
-  background:transparent;
-  color:white;
-}
-
-.btn:hover{
-  transform:translateY(-3px);
-}
-
-/* ================= MARQUEE ================= */
-
-.marquee{
-  overflow:hidden;
-  white-space:nowrap;
-  border-top:1px solid #222;
-  border-bottom:1px solid #222;
-  padding:17px 0;
-  background:#0b0b0b;
-}
-
-.marquee-track{
-  display:inline-block;
-  animation:move 25s linear infinite;
-  font-size:11px;
-  letter-spacing:5px;
-  color:#aaa;
-}
-
-@keyframes move{
-  from{transform:translateX(0)}
-  to{transform:translateX(-50%)}
-}
-
-/* ================= SECTION ================= */
-
-.section{
-  max-width:1400px;
-  margin:auto;
-  padding:110px 28px;
-}
-
-.label{
-  color:var(--gold);
-  font-size:10px;
-  letter-spacing:5px;
-  text-transform:uppercase;
-  margin-bottom:15px;
-}
-
-.title{
-  font-size:clamp(40px,7vw,80px);
-  letter-spacing:-3px;
-  line-height:.95;
-}
-
-.subtitle{
-  color:#888;
-  max-width:600px;
-  line-height:1.8;
-  margin-top:20px;
-}
-
-/* ================= PRODUCTS ================= */
-
-.products{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:16px;
-  margin-top:55px;
-}
-
-.product{
-  background:#111;
-  border:1px solid #242424;
-  overflow:hidden;
-  transition:.35s;
-}
-
-.product:hover{
-  transform:translateY(-8px);
-  border-color:#555;
-}
-
-.product-art{
-  height:410px;
-  position:relative;
-  overflow:hidden;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:
-    radial-gradient(circle,#333 0,#161616 45%,#090909 100%);
-}
-
-.product-art::after{
-  content:"SERBELLA";
-  position:absolute;
-  font-size:55px;
-  font-weight:900;
-  letter-spacing:4px;
-  color:rgba(255,255,255,.035);
-  transform:rotate(-12deg);
-}
-
-.clothing{
-  position:relative;
-  z-index:2;
-  width:170px;
-  height:220px;
-  background:#050505;
-  clip-path:polygon(
-    25% 0,
-    42% 10%,
-    58% 10%,
-    75% 0,
-    100% 25%,
-    80% 42%,
-    75% 100%,
-    25% 100%,
-    20% 42%,
-    0 25%
-  );
-  border:1px solid #555;
-  box-shadow:0 25px 50px rgba(0,0,0,.6);
-}
-
-.clothing.light{
-  background:#e8e4dc;
-}
-
-.clothing.gold{
-  background:#1a1711;
-}
-
-.clothing-text{
-  position:absolute;
-  top:45%;
-  left:50%;
-  transform:translate(-50%,-50%) rotate(-90deg);
-  white-space:nowrap;
-  font-size:17px;
-  font-weight:900;
-  letter-spacing:4px;
-}
-
-.clothing-symbol{
-  position:absolute;
-  top:57%;
-  left:50%;
-  transform:translate(-50%,-50%);
-  font-size:25px;
-}
-
-.product-info{
-  padding:20px;
-}
-
-.product-name{
-  font-size:14px;
-  font-weight:bold;
-  margin-bottom:8px;
-}
-
-.product-category{
-  font-size:10px;
-  color:#777;
-  letter-spacing:1px;
-  text-transform:uppercase;
-}
-
-.product-row{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-top:18px;
-}
-
-.price{
-  font-weight:bold;
-}
-
-.add{
-  border:1px solid #555;
-  background:white;
-  color:black;
-  padding:9px 14px;
-  font-size:10px;
-  letter-spacing:1px;
-}
-
-/* ================= BRAND DESIGN ================= */
-
-.design{
-  background:#eee9df;
-  color:#0a0a0a;
-  position:relative;
-  overflow:hidden;
-}
-
-.design-inner{
-  max-width:1400px;
-  margin:auto;
-  padding:120px 28px;
-  position:relative;
-}
-
-.design-bg{
-  position:absolute;
-  right:-70px;
-  top:50%;
-  transform:translateY(-50%) rotate(90deg);
-  font-size:180px;
-  font-weight:900;
-  color:rgba(0,0,0,.04);
-}
-
-.design h2{
-  font-size:clamp(50px,8vw,110px);
-  line-height:.85;
-  max-width:900px;
-  letter-spacing:-5px;
-}
-
-.design-copy{
-  max-width:620px;
-  margin-top:30px;
-  line-height:1.9;
-  color:#555;
-}
-
-.symbols{
-  display:flex;
-  gap:18px;
-  flex-wrap:wrap;
-  margin-top:50px;
-}
-
-.symbol{
-  border:1px solid #bbb;
-  width:100px;
-  height:100px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:38px;
-  background:#f8f5ef;
-}
-
-.symbol small{
-  display:block;
-  font-size:8px;
-}
-
-/* ================= STORY ================= */
-
-.story{
-  background:#080808;
-}
-
-.story-grid{
-  display:grid;
-  grid-template-columns:1.2fr .8fr;
-  gap:80px;
-  align-items:center;
-}
-
-.story h2{
-  font-size:clamp(50px,7vw,100px);
-  line-height:.9;
-}
-
-.story-text{
-  color:#888;
-  line-height:2;
-  margin-top:30px;
-}
-
-.story-card{
-  border:1px solid #292929;
-  min-height:450px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  background:
-    radial-gradient(circle,#252525,#080808 65%);
-}
-
-.story-card-big{
-  font-size:80px;
-  font-weight:900;
-  letter-spacing:8px;
-}
-
-.story-card-small{
-  color:var(--gold);
-  letter-spacing:4px;
-  font-size:10px;
-  margin-top:15px;
-}
-
-/* ================= FOOTER ================= */
-
-footer{
-  background:#050505;
-  border-top:1px solid #222;
-  padding:70px 28px 30px;
-}
-
-.footer{
-  max-width:1400px;
-  margin:auto;
-}
-
-.footer-logo{
-  font-size:55px;
-  font-weight:900;
-  letter-spacing:8px;
-}
-
-.footer-bottom{
-  border-top:1px solid #222;
-  margin-top:60px;
-  padding-top:25px;
-  display:flex;
-  justify-content:space-between;
-  color:#666;
-  font-size:10px;
-}
-
-/* ================= CART ================= */
-
-.overlay{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.7);
-  z-index:200;
-  opacity:0;
-  pointer-events:none;
-  transition:.3s;
-}
-
-.overlay.open{
-  opacity:1;
-  pointer-events:auto;
-}
-
-.cart{
-  position:fixed;
-  z-index:250;
-  top:0;
-  right:0;
-  height:100%;
-  width:min(450px,100%);
-  background:#f5f2ec;
-  color:#111;
-  transform:translateX(100%);
-  transition:.35s;
-  padding:25px;
-  overflow:auto;
-}
-
-.cart.open{
-  transform:translateX(0);
-}
-
-.cart-head{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  border-bottom:1px solid #ccc;
-  padding-bottom:20px;
-}
-
-.close{
-  border:0;
-  background:#ddd;
-  width:38px;
-  height:38px;
-  border-radius:50%;
-}
-
-.cart-items{
-  padding:15px 0;
-}
-
-.cart-item{
-  display:flex;
-  justify-content:space-between;
-  border-bottom:1px solid #ccc;
-  padding:18px 0;
-}
-
-.remove{
-  border:0;
-  background:none;
-  text-decoration:underline;
-  font-size:11px;
-}
-
-.total{
-  display:flex;
-  justify-content:space-between;
-  font-size:20px;
-  font-weight:bold;
-  padding:25px 0;
-}
-
-.checkout{
-  width:100%;
-  border:0;
-  background:#080808;
-  color:white;
-  padding:17px;
-  letter-spacing:2px;
-}
-
-/* ================= MOBILE ================= */
-
-@media(max-width:950px){
-
-  .navlinks{
-    display:none;
-  }
-
-  .products{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .story-grid{
-    grid-template-columns:1fr;
-  }
-
-}
-
-@media(max-width:550px){
-
-  .nav{
-    height:68px;
-    padding:0 15px;
-  }
-
-  .logo{
-    font-size:19px;
-    letter-spacing:4px;
-  }
-
-  .bag{
-    padding:10px 13px;
-  }
-
-  .hero{
-    min-height:850px;
-  }
-
-  .hero h1{
-    font-size:62px;
-    letter-spacing:6px;
-  }
-
-  .hero-wings{
-    font-size:100px;
-  }
-
-  .section,
-  .design-inner{
-    padding:80px 16px;
-  }
-
-  .products{
-    grid-template-columns:1fr 1fr;
-    gap:9px;
-  }
-
-  .product-art{
-    height:260px;
-  }
-
-  .clothing{
-    width:110px;
-    height:160px;
-  }
-
-  .clothing-text{
-    font-size:11px;
-  }
-
-  .product-info{
-    padding:13px;
-  }
-
-  .product-name{
-    font-size:12px;
-  }
-
-  .product-row{
-    display:block;
-  }
-
-  .add{
-    width:100%;
-    margin-top:10px;
-  }
-
-  .design h2{
-    letter-spacing:-3px;
-  }
-
-  .symbols{
-    gap:8px;
-  }
-
-  .symbol{
-    width:75px;
-    height:75px;
-  }
-
-  .footer-logo{
-    font-size:35px;
-  }
-
-  .footer-bottom{
-    display:block;
-    line-height:2;
-  }
-
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZHORA WEB STUDIO</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
 <header>
-
-<div class="nav">
-
-<a href="#" class="logo">SERBELLA</a>
-
-<nav class="navlinks">
-<a href="#shop">Shop</a>
-<a href="#design">Design</a>
-<a href="#story">Our Story</a>
-</nav>
-
-<button class="bag" onclick="openCart()">
-BAG (<span id="count">0</span>)
-</button>
-
-</div>
-
+  <div class="logo">ZHORA<span>WEB</span></div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <a class="nav-btn" href="#contact">Start a Project</a>
 </header>
-
-<!-- HERO -->
-
-<section class="hero">
-
-<div class="hero-bg-text">SERBELLA</div>
-
-<div class="hero-wings">♛</div>
-
-<div class="hero-content">
-
-<div class="hero-small">
-SERBELLA® / SUMMER 2026
-</div>
-
-<h1>SERBELLA</h1>
-
-<div class="hero-tagline">
-LOVE • MADE • BEAUTIFUL
-</div>
-
-<p class="hero-description">
-A new expression of modern Armenian-inspired luxury.
-Clean silhouettes, powerful graphics and timeless pieces
-created to be worn with confidence.
-</p>
-
-<div class="hero-buttons">
-
-<a href="#shop" class="btn btn-white">
-Shop Collection
-</a>
-
-<a href="#design" class="btn btn-dark">
-Explore The Design
-</a>
-
-</div>
-
-</div>
-
+<section id="home" class="hero">
+  <div class="hero-text">
+    <p class="small-title">WEB DEVELOPMENT STUDIO</p>
+    <h1>WE BUILD<br><span>WEBSITES</span><br>THAT STAND OUT.</h1>
+    <p class="description">
+      Modern, fast and professional websites designed to help businesses
+      look better online and get more customers.
+    </p>
+    <div class="buttons">
+      <a href="#portfolio" class="btn primary">View Our Work</a>
+      <a href="#contact" class="btn secondary">Get Started</a>
+    </div>
+  </div>
+  <div class="hero-card">
+    <div class="card-top">CREATIVE DIGITAL STUDIO</div>
+    <div class="circle">Z</div>
+    <h2>ZHORA<br>WEB STUDIO</h2>
+    <p>DESIGN • CODE • GROW</p>
+  </div>
 </section>
-
-<!-- MARQUEE -->
-
-<div class="marquee">
-
-<div class="marquee-track">
-SERBELLA ® &nbsp; LOVE MADE BEAUTIFUL &nbsp;
-SERBELLA ® &nbsp; SUMMER 2026 &nbsp;
-SERBELLA ® &nbsp; LOVE MADE BEAUTIFUL &nbsp;
-SERBELLA ® &nbsp; SUMMER 2026 &nbsp;
-SERBELLA ® &nbsp; LOVE MADE BEAUTIFUL &nbsp;
-SERBELLA ® &nbsp; SUMMER 2026 &nbsp;
-</div>
-
-</div>
-
-<!-- SHOP -->
-
-<section class="section" id="shop">
-
-<div class="label">
-THE COLLECTION
-</div>
-
-<h2 class="title">
-SERBELLA ESSENTIALS
-</h2>
-
-<p class="subtitle">
-Signature pieces featuring bold SERBELLA branding,
-minimal luxury details and original graphics.
-</p>
-
-<div class="products" id="products"></div>
-
+<section id="services" class="section">
+  <p class="small-title">WHAT WE DO</p>
+  <h2>OUR SERVICES</h2>
+  <div class="cards">
+    <div class="service-card">
+      <span>01</span>
+      <h3>Website Design</h3>
+      <p>Modern and professional designs made specifically for your business.</p>
+    </div>
+    <div class="service-card">
+      <span>02</span>
+      <h3>Web Development</h3>
+      <p>Fast, responsive and functional websites built with clean code.</p>
+    </div>
+    <div class="service-card">
+      <span>03</span>
+      <h3>Business Websites</h3>
+      <p>Complete websites for restaurants, salons, stores, cars and more.</p>
+    </div>
+  </div>
 </section>
-
-<!-- DESIGN -->
-
-<section class="design" id="design">
-
-<div class="design-bg">
-SERBELLA
-</div>
-
-<div class="design-inner">
-
-<div class="label">
-THE SERBELLA LANGUAGE
-</div>
-
-<h2>
-LOVE.<br>
-BEAUTY.<br>
-IDENTITY.
-</h2>
-
-<p class="design-copy">
-SERBELLA combines modern fashion with Armenian-inspired
-identity and symbols of love, beauty and strength.
-Our future collections can feature wings, hearts,
-cross-inspired geometry, Armenian-inspired motifs,
-flags, crowns and oversized SERBELLA graphics.
-</p>
-
-<div class="symbols">
-
-<div class="symbol">♡</div>
-<div class="symbol">♛</div>
-<div class="symbol">✦</div>
-<div class="symbol">♥</div>
-<div class="symbol">✧</div>
-
-</div>
-
-</div>
-
+<section id="portfolio" class="section portfolio">
+  <p class="small-title">OUR WORK</p>
+  <h2>SELECTED PROJECTS</h2>
+  <div class="projects">
+    <div class="project">
+      <div class="project-number">01</div>
+      <h3>LUXE STORE</h3>
+      <p>Luxury fashion website</p>
+    </div>
+    <div class="project">
+      <div class="project-number">02</div>
+      <h3>ELITE BARBER</h3>
+      <p>Modern barbershop website</p>
+    </div>
+    <div class="project">
+      <div class="project-number">03</div>
+      <h3>PREMIUM AUTO</h3>
+      <p>Luxury car dealership website</p>
+    </div>
+  </div>
 </section>
-
-<!-- STORY -->
-
-<section class="section story" id="story">
-
-<div class="story-grid">
-
-<div>
-
-<div class="label">
-OUR STORY
-</div>
-
-<h2>
-LOVE,<br>
-MADE<br>
-BEAUTIFUL.
-</h2>
-
-<p class="story-text">
-SERBELLA brings together “Ser,” the Armenian word for love,
-and “Bella,” meaning beautiful in Spanish and Italian.
-The brand is built around a simple idea:
-what you wear should feel like you.
-</p>
-
-</div>
-
-<div class="story-card">
-
-<div>
-
-<div class="story-card-big">
-SER
-</div>
-
-<div class="story-card-small">
-LOVE / BEAUTY / SERBELLA
-</div>
-
-</div>
-
-</div>
-
-</div>
-
+<section id="pricing" class="section">
+  <p class="small-title">SIMPLE PRICING</p>
+  <h2>WEBSITE PACKAGES</h2>
+  <div class="pricing">
+    <div class="price-card">
+      <h3>STARTER</h3>
+      <div class="price">$299</div>
+      <p>1–3 pages</p>
+      <p>Responsive design</p>
+      <p>Contact section</p>
+      <p>Basic animations</p>
+      <a href="#contact" class="btn secondary">Choose Plan</a>
+    </div>
+    <div class="price-card featured">
+      <div class="popular">POPULAR</div>
+      <h3>PRO</h3>
+      <div class="price">$599</div>
+      <p>Up to 7 pages</p>
+      <p>Premium design</p>
+      <p>Advanced animations</p>
+      <p>Mobile optimization</p>
+      <a href="#contact" class="btn primary">Choose Plan</a>
+    </div>
+    <div class="price-card">
+      <h3>PREMIUM</h3>
+      <div class="price">$999+</div>
+      <p>Custom website</p>
+      <p>Advanced features</p>
+      <p>Custom animations</p>
+      <p>Priority support</p>
+      <a href="#contact" class="btn secondary">Choose Plan</a>
+    </div>
+  </div>
 </section>
-
-<!-- FOOTER -->
-
+<section id="contact" class="contact">
+  <p class="small-title">LET'S WORK TOGETHER</p>
+  <h2>HAVE A PROJECT?</h2>
+  <p>Let's create something amazing for your business.</p>
+  <a class="btn primary" href="mailto:YOUR-EMAIL@example.com">
+    Contact Me
+  </a>
+</section>
 <footer>
-
-<div class="footer">
-
-<div class="footer-logo">
-SERBELLA
-</div>
-
-<div style="margin-top:18px;color:#777">
-LOVE, MADE BEAUTIFUL.
-</div>
-
-<div class="footer-bottom">
-
-<div>
-© 2026 SERBELLA®
-</div>
-
-<div>
-SUMMER COLLECTION 2026
-</div>
-
-</div>
-
-</div>
-
+  <div>© 2026 ZHORA WEB STUDIO</div>
+  <div>DESIGN • CODE • GROW</div>
 </footer>
-
-<!-- CART -->
-
-<div class="overlay" id="overlay" onclick="closeCart()"></div>
-
-<aside class="cart" id="cart">
-
-<div class="cart-head">
-
-<h2>Your Bag</h2>
-
-<button class="close" onclick="closeCart()">
-×
-</button>
-
-</div>
-
-<div class="cart-items" id="cartItems"></div>
-
-<div class="total">
-
-<span>Total</span>
-
-<span>
-$<span id="total">0.00</span>
-</span>
-
-</div>
-
-<button class="checkout" onclick="checkout()">
-CHECKOUT
-</button>
-
-</aside>
-
-<script>
-
-const products=[
-
-{
-name:"SERBELLA Angel Tee",
-category:"T-Shirts",
-price:45,
-type:"dark",
-symbol:"♡"
-},
-
-{
-name:"SERBELLA Armenian Edition",
-category:"T-Shirts",
-price:50,
-type:"light",
-symbol:"✦"
-},
-
-{
-name:"SERBELLA Wings Hoodie",
-category:"Hoodies",
-price:95,
-type:"dark",
-symbol:"♛"
-},
-
-{
-name:"SERBELLA Signature Hoodie",
-category:"Hoodies",
-price:110,
-type:"gold",
-symbol:"♥"
-},
-
-{
-name:"SERBELLA Luxury Pants",
-category:"Pants",
-price:120,
-type:"dark",
-symbol:"✦"
-},
-
-{
-name:"SERBELLA Signature Shorts",
-category:"Shorts",
-price:65,
-type:"light",
-symbol:"♡"
-},
-
-{
-name:"SERBELLA Angel Dress",
-category:"Dresses",
-price:135,
-type:"gold",
-symbol:"♥"
-},
-
-{
-name:"SERBELLA Heritage Tee",
-category:"T-Shirts",
-price:55,
-type:"dark",
-symbol:"♛"
-}
-
-];
-
-let cart=[];
-
-function renderProducts(list=products){
-
-const box=document.getElementById("products");
-
-box.innerHTML=list.map((p,i)=>`
-
-<article class="product">
-
-<div class="product-art">
-
-<div class="clothing ${p.type}">
-
-<div class="clothing-text">
-SERBELLA
-</div>
-
-<div class="clothing-symbol">
-${p.symbol}
-</div>
-
-</div>
-
-</div>
-
-<div class="product-info">
-
-<div class="product-name">
-${p.name}
-</div>
-
-<div class="product-category">
-${p.category}
-</div>
-
-<div class="product-row">
-
-<div class="price">
-$${p.price.toFixed(2)}
-</div>
-
-<button
-class="add"
-onclick="addToCart(${i})">
-ADD
-</button>
-
-</div>
-
-</div>
-
-</article>
-
-`).join("");
-
-}
-
-function addToCart(index){
-
-cart.push(products[index]);
-
-updateCart();
-
-openCart();
-
-}
-
-function removeItem(index){
-
-cart.splice(index,1);
-
-updateCart();
-
-}
-
-function updateCart(){
-
-document.getElementById("count")
-.textContent=cart.length;
-
-const box=document.getElementById("cartItems");
-
-if(cart.length===0){
-
-box.innerHTML=
-"<p style='color:#777;padding:25px 0'>Your bag is empty.</p>";
-
-}else{
-
-box.innerHTML=cart.map((p,i)=>`
-
-<div class="cart-item">
-
-<div>
-<strong>${p.name}</strong>
-<br>
-$${p.price.toFixed(2)}
-</div>
-
-<button
-class="remove"
-onclick="removeItem(${i})">
-Remove
-</button>
-
-</div>
-
-`).join("");
-
-}
-
-const total=cart.reduce(
-(sum,p)=>sum+p.price,0
-);
-
-document.getElementById("total")
-.textContent=total.toFixed(2);
-
-}
-
-function openCart(){
-
-document.getElementById("cart")
-.classList.add("open");
-
-document.getElementById("overlay")
-.classList.add("open");
-
-}
-
-function closeCart(){
-
-document.getElementById("cart")
-.classList.remove("open");
-
-document.getElementById("overlay")
-.classList.remove("open");
-
-}
-
-function checkout(){
-
-if(cart.length===0){
-
-alert("Your SERBELLA bag is empty.");
-
-return;
-
-}
-
-alert(
-"SERBELLA checkout is ready. " +
-"A real payment provider must be connected before accepting real orders."
-);
-
-}
-
-renderProducts();
-
-updateCart();
-
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
+
+style.css
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background: #080808;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+header {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 7%;
+  border-bottom: 1px solid #222;
+  position: sticky;
+  top: 0;
+  background: rgba(8,8,8,.92);
+  backdrop-filter: blur(10px);
+  z-index: 100;
+}
+.logo {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+.logo span {
+  font-weight: 400;
+}
+nav {
+  display: flex;
+  gap: 28px;
+}
+nav a {
+  color: #aaa;
+  text-decoration: none;
+  font-size: 13px;
+  transition: .3s;
+}
+nav a:hover {
+  color: #fff;
+}
+.nav-btn {
+  text-decoration: none;
+  color: #000;
+  background: #fff;
+  padding: 11px 18px;
+  font-size: 12px;
+  font-weight: bold;
+}
+.hero {
+  min-height: 90vh;
+  padding: 100px 7%;
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  align-items: center;
+  gap: 70px;
+}
+.small-title {
+  color: #888;
+  font-size: 11px;
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+}
+h1 {
+  font-size: clamp(50px, 7vw, 100px);
+  line-height: .92;
+  letter-spacing: -5px;
+}
+h1 span {
+  color: #888;
+}
+.description {
+  color: #999;
+  max-width: 560px;
+  margin: 30px 0;
+  font-size: 16px;
+}
+.buttons {
+  display: flex;
+  gap: 12px;
+}
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  padding: 14px 24px;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: .3s;
+}
+.primary {
+  background: #fff;
+  color: #000;
+}
+.primary:hover {
+  transform: translateY(-3px);
+}
+.secondary {
+  border: 1px solid #444;
+  color: #fff;
+}
+.secondary:hover {
+  background: #fff;
+  color: #000;
+}
+.hero-card {
+  min-height: 450px;
+  border: 1px solid #292929;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: radial-gradient(circle at center, #202020, #080808 65%);
+}
+.card-top {
+  color: #777;
+  font-size: 10px;
+  letter-spacing: 3px;
+}
+.circle {
+  width: 130px;
+  height: 130px;
+  border: 1px solid #555;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 55px;
+  margin: 35px 0;
+}
+.hero-card h2 {
+  letter-spacing: 8px;
+  font-size: 24px;
+  line-height: 1.2;
+}
+.hero-card p {
+  color: #777;
+  font-size: 10px;
+  letter-spacing: 4px;
+  margin-top: 15px;
+}
+.section {
+  padding: 120px 7%;
+  border-top: 1px solid #1d1d1d;
+}
+.section h2,
+.contact h2 {
+  font-size: clamp(40px, 6vw, 80px);
+  letter-spacing: -3px;
+  margin-bottom: 50px;
+}
+.cards,
+.projects,
+.pricing {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.service-card,
+.project,
+.price-card {
+  border: 1px solid #292929;
+  padding: 35px;
+  min-height: 260px;
+  transition: .3s;
+}
+.service-card:hover,
+.project:hover,
+.price-card:hover {
+  transform: translateY(-8px);
+  border-color: #666;
+}
+.service-card span,
+.project-number {
+  color: #666;
+  font-size: 12px;
+}
+.service-card h3,
+.project h3,
+.price-card h3 {
+  margin: 40px 0 12px;
+  font-size: 21px;
+}
+.service-card p,
+.project p,
+.price-card p {
+  color: #888;
+  font-size: 14px;
+}
+.projects .project {
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.projects .project h3 {
+  margin-bottom: 5px;
+}
+.price-card {
+  position: relative;
+}
+.price-card .price {
+  font-size: 48px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+.price-card p {
+  margin: 8px 0;
+}
+.price-card .btn {
+  margin-top: 25px;
+}
+.featured {
+  border-color: #777;
+}
+.popular {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: #aaa;
+}
+.contact {
+  padding: 150px 7%;
+  text-align: center;
+  border-top: 1px solid #1d1d1d;
+}
+.contact p {
+  color: #888;
+  margin-bottom: 30px;
+}
+footer {
+  padding: 30px 7%;
+  border-top: 1px solid #222;
+  display: flex;
+  justify-content: space-between;
+  color: #555;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+@media (max-width: 800px) {
+  header {
+    padding: 0 5%;
+  }
+  nav {
+    display: none;
+  }
+  .nav-btn {
+    display: none;
+  }
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 70px 5%;
+  }
+  .hero-card {
+    min-height: 350px;
+  }
+  .section {
+    padding: 80px 5%;
+  }
+  .cards,
+  .projects,
+  .pricing {
+    grid-template-columns: 1fr;
+  }
+  footer {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+script.js
+
+const links = document.querySelectorAll("a[href^='#']");
+links.forEach(link => {
+  link.addEventListener("click", function(e) {
+    const target = document.querySelector(this.getAttribute("href"));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({
+        behavior: "smooth"
+      });
+    }
+  });
+});
+window.addEventListener("scroll", () => {
+  const header = document.querySelector("header");
+  if (window.scrollY > 50) {
+    header.style.borderBottomColor = "#444";
+  } else {
+    header.style.borderBottomColor = "#222";
+  }
+});
