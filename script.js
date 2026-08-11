@@ -1,6 +1,9 @@
 let cart = [];
 
 const cartCount = document.getElementById("cart-count");
+const cartPanel = document.getElementById("cart-panel");
+const cartItems = document.getElementById("cart-items");
+const cartTotal = document.getElementById("cart-total");
 
 const products = [
   {
@@ -21,16 +24,47 @@ const products = [
   }
 ];
 
-function addToCart(productIndex) {
-  const product = products[productIndex];
-
-  cart.push(product);
-
+function addToCart(index) {
+  cart.push(products[index]);
   updateCart();
 }
 
 function updateCart() {
+
   cartCount.textContent = cart.length;
+
+  cartItems.innerHTML = "";
+
+  let total = 0;
+
+  cart.forEach((item, index) => {
+
+    total += item.price;
+
+    const div = document.createElement("div");
+
+    div.className = "cart-item";
+
+    div.innerHTML = `
+      <div>
+        <h4>${item.name}</h4>
+        <p>$${item.price}</p>
+      </div>
+
+      <button class="remove-item" onclick="removeItem(${index})">
+        REMOVE
+      </button>
+    `;
+
+    cartItems.appendChild(div);
+  });
+
+  cartTotal.textContent = total;
+}
+
+function removeItem(index) {
+  cart.splice(index, 1);
+  updateCart();
 }
 
 document.querySelectorAll(".product").forEach((product, index) => {
@@ -45,18 +79,18 @@ document.querySelectorAll(".product").forEach((product, index) => {
   button.style.color = "#fff";
   button.style.border = "none";
   button.style.cursor = "pointer";
-  button.style.letterSpacing = "1px";
 
-  button.addEventListener("click", () => {
+  button.onclick = () => {
     addToCart(index);
-
-    button.textContent = "ADDED ✓";
-
-    setTimeout(() => {
-      button.textContent = "ADD TO BAG";
-    }, 1500);
-  });
+  };
 
   product.appendChild(button);
-
 });
+
+document.getElementById("open-cart").onclick = () => {
+  cartPanel.classList.add("active");
+};
+
+document.getElementById("close-cart").onclick = () => {
+  cartPanel.classList.remove("active");
+};
