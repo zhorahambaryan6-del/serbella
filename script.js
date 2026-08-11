@@ -1,25 +1,62 @@
-const links = document.querySelectorAll("a[href^='#']");
+let cart = [];
 
-links.forEach(link => {
-  link.addEventListener("click", function(e) {
-    const target = document.querySelector(this.getAttribute("href"));
+const cartCount = document.getElementById("cart-count");
 
-    if (target) {
-      e.preventDefault();
-
-      target.scrollIntoView({
-        behavior: "smooth"
-      });
-    }
-  });
-});
-
-window.addEventListener("scroll", () => {
-  const header = document.querySelector("header");
-
-  if (window.scrollY > 50) {
-    header.style.borderBottomColor = "#444";
-  } else {
-    header.style.borderBottomColor = "#222";
+const products = [
+  {
+    name: "SERBELLA NOIR DRESS",
+    price: 129
+  },
+  {
+    name: "SERBELLA SIGNATURE SET",
+    price: 149
+  },
+  {
+    name: "SERBELLA ELITE JACKET",
+    price: 179
+  },
+  {
+    name: "SERBELLA ESSENTIAL",
+    price: 95
   }
+];
+
+function addToCart(productIndex) {
+  const product = products[productIndex];
+
+  cart.push(product);
+
+  updateCart();
+}
+
+function updateCart() {
+  cartCount.textContent = cart.length;
+}
+
+document.querySelectorAll(".product").forEach((product, index) => {
+
+  const button = document.createElement("button");
+
+  button.textContent = "ADD TO BAG";
+
+  button.style.marginTop = "15px";
+  button.style.padding = "12px 18px";
+  button.style.background = "#111";
+  button.style.color = "#fff";
+  button.style.border = "none";
+  button.style.cursor = "pointer";
+  button.style.letterSpacing = "1px";
+
+  button.addEventListener("click", () => {
+    addToCart(index);
+
+    button.textContent = "ADDED ✓";
+
+    setTimeout(() => {
+      button.textContent = "ADD TO BAG";
+    }, 1500);
+  });
+
+  product.appendChild(button);
+
 });
