@@ -1,59 +1,44 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SERBELLA — Checkout</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Checkout - SERBELLA</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-<header class="navbar">
-  <a href="index.html" class="logo">SERBELLA</a>
-</header>
-<main class="checkout-page">
-  <p class="eyebrow">SERBELLA / CHECKOUT</p>
-  <h1>CHECKOUT</h1>
-  <div class="checkout-layout">
-    <form id="checkout-form">
-      <h2>SHIPPING INFORMATION</h2>
-      <label>
-        Full Name
-        <input type="text" id="name" required>
-      </label>
-      <label>
-        Email
-        <input type="email" id="email" required>
-      </label>
-      <label>
-        Address
-        <input type="text" id="address" required>
-      </label>
-      <label>
-        City
-        <input type="text" id="city" required>
-      </label>
-      <label>
-        State
-        <input type="text" id="state" required>
-      </label>
-      <label>
-        ZIP Code
-        <input type="text" id="zip" required>
-      </label>
-      <button type="submit" class="checkout-submit">
-        PLACE ORDER
-      </button>
+
+  <header>
+    <h1>Checkout</h1>
+  </header>
+
+  <main class="checkout-container">
+
+    <!-- Cart Items -->
+    <section id="checkout-items" class="checkout-items">
+      <!-- JS will inject items here -->
+    </section>
+
+    <!-- Total -->
+    <div class="checkout-summary">
+      <h2>Total: $<span id="checkout-total">0.00</span></h2>
+    </div>
+
+    <!-- Checkout Form -->
+    <form id="checkout-form" class="checkout-form">
+
+      <input type="text" placeholder="Full Name" required />
+      <input type="email" placeholder="Email" required />
+      <input type="text" placeholder="Address" required />
+
+      <button type="submit">Place Order</button>
+
     </form>
-    <aside class="order-summary">
-      <h2>YOUR ORDER</h2>
-      <div id="checkout-items"></div>
-      <div class="summary-total">
-        <span>Total</span>
-        <strong>$<span id="checkout-total">0</span></strong>
-      </div>
-    </aside>
-  </div>
-</main>
-<script src="checkout.js"></script>
+
+  </main>
+
+  <script src="checkout.js"></script>
 </body>
 </html>
+```
