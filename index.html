@@ -1,437 +1,156 @@
 index.html
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ZHORA WEB STUDIO</title>
+  <title>SERBELLA — Luxury Fashion</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-  <div class="logo">ZHORA<span>WEB</span></div>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#services">Services</a>
-    <a href="#portfolio">Portfolio</a>
-    <a href="#pricing">Pricing</a>
-    <a href="#contact">Contact</a>
-  </nav>
-  <a class="nav-btn" href="#contact">Start a Project</a>
-</header>
-<section id="home" class="hero">
-  <div class="hero-text">
-    <p class="small-title">WEB DEVELOPMENT STUDIO</p>
-    <h1>WE BUILD<br><span>WEBSITES</span><br>THAT STAND OUT.</h1>
-    <p class="description">
-      Modern, fast and professional websites designed to help businesses
-      look better online and get more customers.
-    </p>
-    <div class="buttons">
-      <a href="#portfolio" class="btn primary">View Our Work</a>
-      <a href="#contact" class="btn secondary">Get Started</a>
+  <!-- NAVIGATION -->
+  <header class="navbar">
+    <a href="#" class="logo">SERBELLA</a>
+    <nav class="nav-links">
+      <a href="#new">New Collection</a>
+      <a href="#shop">Shop</a>
+      <a href="#story">Our Story</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="cart-button">
+      Bag <span id="cart-count">0</span>
+    </button>
+  </header>
+  <!-- HERO -->
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">SERBELLA / 01</p>
+        <h1>
+          LUXURY<br>
+          WITHOUT<br>
+          LIMITS.
+        </h1>
+        <p class="hero-text">
+          Discover the first SERBELLA collection —
+          designed for those who choose confidence,
+          simplicity and timeless style.
+        </p>
+        <a href="#new" class="shop-button">
+          SHOP COLLECTION
+        </a>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-logo">S</div>
+        <p>SERBELLA</p>
+        <span>EST. 2026</span>
+      </div>
+    </section>
+    <!-- COLLECTION -->
+    <section id="new" class="collection">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">THE FIRST DROP</p>
+          <h2>NEW COLLECTION</h2>
+        </div>
+        <p>
+          A carefully designed selection
+          created for the modern wardrobe.
+        </p>
+      </div>
+      <div class="products">
+        <article class="product">
+          <div class="product-image">
+            <span>01</span>
+            <div>S</div>
+          </div>
+          <div class="product-info">
+            <h3>SERBELLA NOIR DRESS</h3>
+            <p>Luxury Evening Dress</p>
+            <strong>$129</strong>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product-image">
+            <span>02</span>
+            <div>S</div>
+          </div>
+          <div class="product-info">
+            <h3>SERBELLA SIGNATURE SET</h3>
+            <p>Premium Two-Piece Set</p>
+            <strong>$149</strong>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product-image">
+            <span>03</span>
+            <div>S</div>
+          </div>
+          <div class="product-info">
+            <h3>SERBELLA ELITE JACKET</h3>
+            <p>Luxury Structured Jacket</p>
+            <strong>$179</strong>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product-image">
+            <span>04</span>
+            <div>S</div>
+          </div>
+          <div class="product-info">
+            <h3>SERBELLA ESSENTIAL</h3>
+            <p>Heavyweight Luxury Hoodie</p>
+            <strong>$95</strong>
+          </div>
+        </article>
+      </div>
+    </section>
+    <!-- BRAND STORY -->
+    <section id="story" class="story">
+      <div class="story-number">
+        01
+      </div>
+      <div>
+        <p class="eyebrow">THE SERBELLA IDEA</p>
+        <h2>
+          MADE FOR<br>
+          THOSE WHO<br>
+          STAND OUT.
+        </h2>
+        <p class="story-text">
+          SERBELLA is a modern fashion concept built around
+          confidence, simplicity and luxury.
+          Every piece is designed to make a statement
+          without needing to be loud.
+        </p>
+      </div>
+    </section>
+    <!-- CTA -->
+    <section id="shop" class="cta">
+      <p class="eyebrow">SERBELLA / NEW ERA</p>
+      <h2>
+        YOUR STYLE.<br>
+        YOUR STATEMENT.
+      </h2>
+      <a href="#new" class="shop-button">
+        EXPLORE COLLECTION
+      </a>
+    </section>
+  </main>
+  <!-- FOOTER -->
+  <footer id="contact">
+    <div class="footer-logo">
+      SERBELLA
     </div>
-  </div>
-  <div class="hero-card">
-    <div class="card-top">CREATIVE DIGITAL STUDIO</div>
-    <div class="circle">Z</div>
-    <h2>ZHORA<br>WEB STUDIO</h2>
-    <p>DESIGN • CODE • GROW</p>
-  </div>
-</section>
-<section id="services" class="section">
-  <p class="small-title">WHAT WE DO</p>
-  <h2>OUR SERVICES</h2>
-  <div class="cards">
-    <div class="service-card">
-      <span>01</span>
-      <h3>Website Design</h3>
-      <p>Modern and professional designs made specifically for your business.</p>
+    <div>
+      <p>Luxury Fashion / 2026</p>
+      <p>Designed for the next generation.</p>
     </div>
-    <div class="service-card">
-      <span>02</span>
-      <h3>Web Development</h3>
-      <p>Fast, responsive and functional websites built with clean code.</p>
+    <div>
+      <p>Instagram</p>
+      <p>Email</p>
     </div>
-    <div class="service-card">
-      <span>03</span>
-      <h3>Business Websites</h3>
-      <p>Complete websites for restaurants, salons, stores, cars and more.</p>
-    </div>
-  </div>
-</section>
-<section id="portfolio" class="section portfolio">
-  <p class="small-title">OUR WORK</p>
-  <h2>SELECTED PROJECTS</h2>
-  <div class="projects">
-    <div class="project">
-      <div class="project-number">01</div>
-      <h3>LUXE STORE</h3>
-      <p>Luxury fashion website</p>
-    </div>
-    <div class="project">
-      <div class="project-number">02</div>
-      <h3>ELITE BARBER</h3>
-      <p>Modern barbershop website</p>
-    </div>
-    <div class="project">
-      <div class="project-number">03</div>
-      <h3>PREMIUM AUTO</h3>
-      <p>Luxury car dealership website</p>
-    </div>
-  </div>
-</section>
-<section id="pricing" class="section">
-  <p class="small-title">SIMPLE PRICING</p>
-  <h2>WEBSITE PACKAGES</h2>
-  <div class="pricing">
-    <div class="price-card">
-      <h3>STARTER</h3>
-      <div class="price">$299</div>
-      <p>1–3 pages</p>
-      <p>Responsive design</p>
-      <p>Contact section</p>
-      <p>Basic animations</p>
-      <a href="#contact" class="btn secondary">Choose Plan</a>
-    </div>
-    <div class="price-card featured">
-      <div class="popular">POPULAR</div>
-      <h3>PRO</h3>
-      <div class="price">$599</div>
-      <p>Up to 7 pages</p>
-      <p>Premium design</p>
-      <p>Advanced animations</p>
-      <p>Mobile optimization</p>
-      <a href="#contact" class="btn primary">Choose Plan</a>
-    </div>
-    <div class="price-card">
-      <h3>PREMIUM</h3>
-      <div class="price">$999+</div>
-      <p>Custom website</p>
-      <p>Advanced features</p>
-      <p>Custom animations</p>
-      <p>Priority support</p>
-      <a href="#contact" class="btn secondary">Choose Plan</a>
-    </div>
-  </div>
-</section>
-<section id="contact" class="contact">
-  <p class="small-title">LET'S WORK TOGETHER</p>
-  <h2>HAVE A PROJECT?</h2>
-  <p>Let's create something amazing for your business.</p>
-  <a class="btn primary" href="mailto:YOUR-EMAIL@example.com">
-    Contact Me
-  </a>
-</section>
-<footer>
-  <div>© 2026 ZHORA WEB STUDIO</div>
-  <div>DESIGN • CODE • GROW</div>
-</footer>
-<script src="script.js"></script>
+  </footer>
+  <script src="script.js"></script>
 </body>
 </html>
-
-style.css
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-html {
-  scroll-behavior: smooth;
-}
-body {
-  background: #080808;
-  color: #fff;
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.6;
-}
-header {
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 7%;
-  border-bottom: 1px solid #222;
-  position: sticky;
-  top: 0;
-  background: rgba(8,8,8,.92);
-  backdrop-filter: blur(10px);
-  z-index: 100;
-}
-.logo {
-  font-size: 20px;
-  font-weight: 800;
-  letter-spacing: 2px;
-}
-.logo span {
-  font-weight: 400;
-}
-nav {
-  display: flex;
-  gap: 28px;
-}
-nav a {
-  color: #aaa;
-  text-decoration: none;
-  font-size: 13px;
-  transition: .3s;
-}
-nav a:hover {
-  color: #fff;
-}
-.nav-btn {
-  text-decoration: none;
-  color: #000;
-  background: #fff;
-  padding: 11px 18px;
-  font-size: 12px;
-  font-weight: bold;
-}
-.hero {
-  min-height: 90vh;
-  padding: 100px 7%;
-  display: grid;
-  grid-template-columns: 1.2fr .8fr;
-  align-items: center;
-  gap: 70px;
-}
-.small-title {
-  color: #888;
-  font-size: 11px;
-  letter-spacing: 4px;
-  margin-bottom: 20px;
-}
-h1 {
-  font-size: clamp(50px, 7vw, 100px);
-  line-height: .92;
-  letter-spacing: -5px;
-}
-h1 span {
-  color: #888;
-}
-.description {
-  color: #999;
-  max-width: 560px;
-  margin: 30px 0;
-  font-size: 16px;
-}
-.buttons {
-  display: flex;
-  gap: 12px;
-}
-.btn {
-  display: inline-block;
-  text-decoration: none;
-  padding: 14px 24px;
-  font-size: 12px;
-  font-weight: bold;
-  letter-spacing: 1px;
-  transition: .3s;
-}
-.primary {
-  background: #fff;
-  color: #000;
-}
-.primary:hover {
-  transform: translateY(-3px);
-}
-.secondary {
-  border: 1px solid #444;
-  color: #fff;
-}
-.secondary:hover {
-  background: #fff;
-  color: #000;
-}
-.hero-card {
-  min-height: 450px;
-  border: 1px solid #292929;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background: radial-gradient(circle at center, #202020, #080808 65%);
-}
-.card-top {
-  color: #777;
-  font-size: 10px;
-  letter-spacing: 3px;
-}
-.circle {
-  width: 130px;
-  height: 130px;
-  border: 1px solid #555;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  font-size: 55px;
-  margin: 35px 0;
-}
-.hero-card h2 {
-  letter-spacing: 8px;
-  font-size: 24px;
-  line-height: 1.2;
-}
-.hero-card p {
-  color: #777;
-  font-size: 10px;
-  letter-spacing: 4px;
-  margin-top: 15px;
-}
-.section {
-  padding: 120px 7%;
-  border-top: 1px solid #1d1d1d;
-}
-.section h2,
-.contact h2 {
-  font-size: clamp(40px, 6vw, 80px);
-  letter-spacing: -3px;
-  margin-bottom: 50px;
-}
-.cards,
-.projects,
-.pricing {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-}
-.service-card,
-.project,
-.price-card {
-  border: 1px solid #292929;
-  padding: 35px;
-  min-height: 260px;
-  transition: .3s;
-}
-.service-card:hover,
-.project:hover,
-.price-card:hover {
-  transform: translateY(-8px);
-  border-color: #666;
-}
-.service-card span,
-.project-number {
-  color: #666;
-  font-size: 12px;
-}
-.service-card h3,
-.project h3,
-.price-card h3 {
-  margin: 40px 0 12px;
-  font-size: 21px;
-}
-.service-card p,
-.project p,
-.price-card p {
-  color: #888;
-  font-size: 14px;
-}
-.projects .project {
-  min-height: 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-}
-.projects .project h3 {
-  margin-bottom: 5px;
-}
-.price-card {
-  position: relative;
-}
-.price-card .price {
-  font-size: 48px;
-  font-weight: bold;
-  margin: 20px 0;
-}
-.price-card p {
-  margin: 8px 0;
-}
-.price-card .btn {
-  margin-top: 25px;
-}
-.featured {
-  border-color: #777;
-}
-.popular {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  font-size: 9px;
-  letter-spacing: 2px;
-  color: #aaa;
-}
-.contact {
-  padding: 150px 7%;
-  text-align: center;
-  border-top: 1px solid #1d1d1d;
-}
-.contact p {
-  color: #888;
-  margin-bottom: 30px;
-}
-footer {
-  padding: 30px 7%;
-  border-top: 1px solid #222;
-  display: flex;
-  justify-content: space-between;
-  color: #555;
-  font-size: 10px;
-  letter-spacing: 2px;
-}
-@media (max-width: 800px) {
-  header {
-    padding: 0 5%;
-  }
-  nav {
-    display: none;
-  }
-  .nav-btn {
-    display: none;
-  }
-  .hero {
-    grid-template-columns: 1fr;
-    padding: 70px 5%;
-  }
-  .hero-card {
-    min-height: 350px;
-  }
-  .section {
-    padding: 80px 5%;
-  }
-  .cards,
-  .projects,
-  .pricing {
-    grid-template-columns: 1fr;
-  }
-  footer {
-    flex-direction: column;
-    gap: 10px;
-  }
-}
-
-script.js
-
-const links = document.querySelectorAll("a[href^='#']");
-links.forEach(link => {
-  link.addEventListener("click", function(e) {
-    const target = document.querySelector(this.getAttribute("href"));
-    if (target) {
-      e.preventDefault();
-      target.scrollIntoView({
-        behavior: "smooth"
-      });
-    }
-  });
-});
-window.addEventListener("scroll", () => {
-  const header = document.querySelector("header");
-  if (window.scrollY > 50) {
-    header.style.borderBottomColor = "#444";
-  } else {
-    header.style.borderBottomColor = "#222";
-  }
-});
