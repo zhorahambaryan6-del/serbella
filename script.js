@@ -24,7 +24,7 @@ const products = [
   }
 ];
 
-function addToCart(index) {
+function addToCart(index) {localStorage.setItem("serbellaCart", JSON.stringify(cart));
   cart.push(products[index]);
   updateCart();
 }
