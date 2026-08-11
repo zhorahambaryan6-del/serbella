@@ -91,6 +91,8 @@ document.getElementById("open-cart").onclick = () => {
   cartPanel.classList.add("active");
 };
 
-document.getElementById("close-cart").onclick = () => {
+document.getElementById("close-cart").onclick = () =>document.getElementById("checkout-button").onclick = () => {
+  window.location.href = "checkout.html";
+}; {
   cartPanel.classList.remove("active");
 };
